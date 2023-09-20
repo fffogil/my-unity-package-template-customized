@@ -1,88 +1,47 @@
-[![npm package](https://img.shields.io/npm/v/com.{{COMPANY}}.{{REPOSITORY_NAME}})](https://www.npmjs.com/package/com.{{COMPANY}}.{{REPOSITORY_NAME}})
-[![openupm](https://img.shields.io/npm/v/com.{{COMPANY}}.{{REPOSITORY_NAME}}?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.{{COMPANY}}.{{REPOSITORY_NAME}}/)
-![Tests](https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}/workflows/Tests/badge.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
 # {{FRIENDLY_NAME}}
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+## About
 {{DESCRIPTION}}
 
-- [How to use](#how-to-use)
-- [Install](#install)
-  - [via npm](#via-npm)
-  - [via OpenUPM](#via-openupm)
-  - [via Git URL](#via-git-url)
-  - [Tests](#tests)
-- [Configuration](#configuration)
+## Overview
 
-<!-- toc -->
+*To be filled*
 
-## How to use
+## Minimum Requirements
+* Unity 2021 and above
 
-*Work In Progress*
+### Install via GIT URL
 
-## Install
+Go to ```Package Manager``` -> ```Add package from GIT url...``` -> Enter ```https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}.git``` -> Click ```Add```
 
-### via npm
+You will need to have Git installed and available in your system's PATH.
 
-Open `Packages/manifest.json` with your favorite text editor. Add a [scoped registry](https://docs.unity3d.com/Manual/upm-scoped.html) and following line to dependencies block:
-```json
-{
-  "scopedRegistries": [
-    {
-      "name": "npmjs",
-      "url": "https://registry.npmjs.org/",
-      "scopes": [
-        "com.{{COMPANY}}"
-      ]
-    }
-  ],
-  "dependencies": {
-    "com.{{COMPANY}}.{{REPOSITORY_NAME}}": "1.0.0"
-  }
-}
-```
-Package should now appear in package manager.
+## Usage
 
-### via OpenUPM
-
-The package is also available on the [openupm registry](https://openupm.com/packages/com.{{COMPANY}}.{{REPOSITORY_NAME}}). You can install it eg. via [openupm-cli](https://github.com/openupm/openupm-cli).
-
-```
-openupm add com.{{COMPANY}}.{{REPOSITORY_NAME}}
-```
-
-### via Git URL
-
-Open `Packages/manifest.json` with your favorite text editor. Add following line to the dependencies block:
-```json
-{
-  "dependencies": {
-    "com.{{COMPANY}}.{{REPOSITORY_NAME}}": "https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}.git"
-  }
-}
-```
-
-### Tests
-
-The package can optionally be set as *testable*.
-In practice this means that tests in the package will be visible in the [Unity Test Runner](https://docs.unity3d.com/2017.4/Documentation/Manual/testing-editortestsrunner.html).
-
-Open `Packages/manifest.json` with your favorite text editor. Add following line **after** the dependencies block:
-```json
-{
-  "dependencies": {
-  },
-  "testables": [ "com.{{COMPANY}}.{{REPOSITORY_NAME}}" ]
-}
-```
-
-## Configuration
-
-*Work In Progress*
+*To be filled*
 
 ## License
 
 MIT License
 
-Copyright © {{YEAR}} {{COMPANY_FRIENDLY_NAME}}
+Copyright (c) {{YEAR}} {{COMPANY_FRIENDLY_NAME}}
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
