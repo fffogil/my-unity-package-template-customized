@@ -1,7 +1,7 @@
 {
   "name": "com.{{COMPANY}}.{{REPOSITORY_NAME}}",
   "displayName": "{{COMPANY_FRIENDLY_NAME}} - {{FRIENDLY_NAME}}",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "unity": "{{UNITY_VERSION}}",
   "description": "{{DESCRIPTION}}",
   "keywords": [

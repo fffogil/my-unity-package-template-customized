@@ -21,20 +21,17 @@ setvar() {
   fi
 }
 
-setvar COMPANY_FRIENDLY_NAME "$1" "Company name" "3D Group"
-setvar COMPANY "$2" "Company name in lower case" "3d-group"
-setvar REPORT_EMAIL "$3" "Unacceptable behavior may be reported at" "support@${COMPANY}.com"
-setvar COMPANY_WEBSITE "$4" "Company website" "https://${COMPANY}.com"
+COMPANY_FRIENDLY_NAME=$(echo "Ligofff" | sed -e 's/[]\/$*.^[]/\\&/g');
+COMPANY=$(echo "ligofff" | sed -e 's/[]\/$*.^[]/\\&/g');
+REPORT_EMAIL=$(echo "support@ligofff.com" | sed -e 's/[]\/$*.^[]/\\&/g');
+COMPANY_WEBSITE=$(echo "https://ligofff.com" | sed -e 's/[]\/$*.^[]/\\&/g');
+
 setvar REPOSITORY_NAME "$5" "Repository name" "unity-simple-notifications"
 setvar FRIENDLY_NAME "$6" "Friendly name for project" "Notifications"
 setvar DESCRIPTION "$7" "Description" "Package for Unity game engine."
 setvar UNITY_VERSION "$8" "Unity version" "2021.3.11f1"
+setvar INCLUDE_SAMPLES_TESTS "$9" "Include samples and tests? (y/n)" "n"
 
-# Escape special characters for input to be used in sed
-COMPANY_FRIENDLY_NAME=$(echo "$COMPANY_FRIENDLY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');
-COMPANY=$(echo "$COMPANY" | sed -e 's/[]\/$*.^[]/\\&/g');
-REPORT_EMAIL=$(echo "$REPORT_EMAIL" | sed -e 's/[]\/$*.^[]/\\&/g');
-COMPANY_WEBSITE=$(echo "$COMPANY_WEBSITE" | sed -e 's/[]\/$*.^[]/\\&/g');
 REPOSITORY_NAME=$(echo "$REPOSITORY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');
 FRIENDLY_NAME=$(echo "$FRIENDLY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');
 DESCRIPTION=$(echo "$DESCRIPTION" | sed -e 's/[]\/$*.^[]/\\&/g');
@@ -79,8 +76,20 @@ mv -f templates/CONTRIBUTING.md CONTRIBUTING.md
 mv -f templates/LICENSE LICENSE
 mv -f templates/package.json package.json
 mv -f templates/.github .github
+rm -rf .git
+git init
+git add .
+git commit -a -m "Initial setup"
 
 rm -rf templates
+
+# Remove template repository specific files
+
+if [[ $INCLUDE_SAMPLES_TESTS == "n" ]]; then
+  rm -rf Tests
+  rm -rf Samples
+  rm -rf .github/workflows
+fi
 
 echo 'done.'
 rm RUNME.sh
