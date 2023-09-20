@@ -29,7 +29,7 @@ COMPANY_WEBSITE=$(echo "https://ligofff.com" | sed -e 's/[]\/$*.^[]/\\&/g');
 setvar REPOSITORY_NAME "$5" "Repository name" "unity-simple-notifications"
 setvar FRIENDLY_NAME "$6" "Friendly name for project" "Notifications"
 setvar DESCRIPTION "$7" "Description" "Package for Unity game engine."
-setvar UNITY_VERSION "$8" "Unity version" "2021.3.11f1"
+setvar UNITY_VERSION "$8" "Unity version" "2022.2"
 setvar INCLUDE_SAMPLES_TESTS "$9" "Include samples and tests? (y/n)" "n"
 
 REPOSITORY_NAME=$(echo "$REPOSITORY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');
